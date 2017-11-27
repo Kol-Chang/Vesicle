@@ -10,6 +10,7 @@ classdef GD3 < handle
 		Dy % spacing in y direction
 		Dz % spacing in z direction
 		Ds % mean spacing
+		EltVol % volume of one element
 		ncols % number of grid points in x direction
 		mrows % number of grid points in y direction
 		lshts % number of grid points in z direction
@@ -87,6 +88,7 @@ classdef GD3 < handle
 			obj.Dy = Ym(2,1,1) - Ym(1,1,1);
 			obj.Dz = Zm(1,1,2) - Zm(1,1,1);
 			obj.Ds = (obj.Dx + obj.Dy + obj.Dz) / 3;
+			obj.EltVol = obj.Dx * obj.Dy * obj.Dz;
 			obj.Size = size(Xm);
 			obj.mrows = obj.Size(1);
 			obj.ncols = obj.Size(2);
